@@ -330,7 +330,5 @@ button:
       - uart.write: "getLatency"
       - delay: 500ms
       - uart.write: "getPwm"
-      - delay: 500ms
-      - uart.write: "getGpioMode"
       - delay: 5000ms
       - switch.turn_on: mmwave_sensor
