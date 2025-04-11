@@ -202,11 +202,11 @@ number:
     icon: mdi:clock-start
     id: mmwave_on_latency
     entity_category: config
-    min_value: 0.5
-    max_value: 100
+    min_value: 0.25
+    max_value: 2
     initial_value: 0.5
     optimistic: true
-    step: 0.5
+    step: 0.25
     restore_value: true
     unit_of_measurement: seconds
     mode: slider
@@ -308,20 +308,6 @@ button:
       - delay: 1s
       - uart.write: "resetCfg"
       - delay: 3s
-      - switch.turn_on: mmwave_sensor
-  
-  - platform: template
-    name: "Stop Sensor"
-    id: stop_sensor
-    entity_category: config
-    on_press:
-      - switch.turn_off: mmwave_sensor
-  
-  - platform: template
-    name: "Start Sensor"
-    id: start_sensor
-    entity_category: config
-    on_press:
       - switch.turn_on: mmwave_sensor
 
   - platform: template
